@@ -16,12 +16,12 @@
 learning-spring-boot
 |__ build.gradle
 |__ gradle 
-		|__ wrapper
+	|__ wrapper
 |__ src 
-		|__ main
-		    |__ java
-		    |__ resources
-		    		|__ application.properties
+  |__ main
+    |__ java
+    |__ resources
+      |__ application.properties
 ```
 
 - build.gradle
