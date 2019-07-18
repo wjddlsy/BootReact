@@ -28,10 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-		exclude group: 'junit', module: 'junit'
-	}
+	testImplementation('org.springframework.boot:spring-boot-starter-test') 
 	//compile group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
 	testImplementation 'io.projectreactor:reactor-test'
 }

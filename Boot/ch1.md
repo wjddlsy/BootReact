@@ -95,6 +95,8 @@ LearningSpringBootApplication.java
 
 - 따라서, 일부 속성만 조정하고 싶다면 빈 전체를 바꿀 필요 없이 자동 설정 빈의 속성을 조정할 수 있다. 
 
+- 스프링 빈 : https://gmlwjd9405.github.io/2018/11/10/spring-beans.html
+
 ```
 # src/main/resources/application.properties 
 
@@ -191,18 +193,22 @@ $ java -jar build/libs/learning-spring-boot-0.0.1-SNAPSHOT.jar
 
 ```bash
 $ SERVER_PORT=8000 java -jar build/libs/learning-spring-boot-0.0.1-SNAPSHOT.jar
-```
 
+위의 방법처럼 server.port를 오버라이드해서 실행해 클라우드에 배포를 할 수 있다.
+```
 
 
 > ### 6. 클라우드 파운드리에 배포
 
 클라우드-네이티브는 애플리케이션 표준으로 자리잡고 있다 
 
-:smile: **클라우드-네이티브**
+:smile: **클라우드-네이티브**  
 
-​	규모에 맞게 소프트웨어를 빠르고, 일관되며, 안정적으로 제공하는 고성능 조직 패턴. 지속적인 배포, 데브옵스 및 마이크로서비스는 클라우드-네이티브의 이유, 방법 및 종류를 나타낸다. 
+<pre>​규모에 맞게 소프트웨어를 빠르고, 일관되며, 안정적으로 제공하는 고성능 조직 패턴. 지속적인 배포, 데브옵스 및 마이크로서비스는 클라우드-네이티브의 이유, 방법 및 종류를 나타낸다. 
 
+Pivotal 클라우드-네이티브 : https://pivotal.io/kr/cloud-native
+</pre>
+   
 
 
 > ### 7. 프로덕션-준비 지원 추가
