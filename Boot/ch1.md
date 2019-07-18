@@ -43,6 +43,7 @@
 
 <hr/>
 > ### 2. 스프링 부트 스타터
+
 <pre>
 1. 의존성을 지정하지 않으면 애플리케이션이 완료되지 않는다. 스프링 부트의 중요한 기능은 가상 패키지이다.
 2. 스프링 부트 스타터 패키지를 사용하면 설치 및 실행에 필요한 부분을 신속하게 파악할 수 있다.
@@ -70,9 +71,17 @@ LearningSpringBootApplication.java
 3) 임베디드 몽고 DB 저장소인 플랩두들 확인 
 
 # 임베디드 네티 : 
+리액티브 애플리케이션은 비동기, Non-Blocking 하게 동작한다. 스프링 부트 2.0 에서는 리액티브 애플리케이션 개발을 위한, 오토 컨피그레이션을 제공한다. 기존 톰캣 임베디드 방식에더해 2.0부터는 리액티브 환경을 위한 Netty 등의 임베디드 서버 구성을 지원한다.
+
+# 스프링 웹 플럭스(Spring WebFlux) :
+설명 : https://brunch.co.kr/@springboot/96
+
+# ReactiveCrudRepository :
+1) 도메인 정보를 캡처하는 동시에 CI(concrete implementation)을 만든다. 또한 미리 정의된 CRUD 오퍼레이션(save, delete, deleteBy, deleteAll, findById, findAll)도 제공한다.
+2) ReactiveCrudRepository<Chapter, String> 으로 엔티티 타입과, 기본 키 타입을 지정한다.
+3) 커스텀 파인더 : !! 3장에서 진행
+
 </pre>
-
-
 
 > ### 4. 스프링 부트의 속성 지원에 대해 알아보기 
 
@@ -230,6 +239,5 @@ compile('org.springframework.boot:spring-boot-starter-actuator')
 # src/main/resources/application.properties
 endpoints.{endpoint}.enabled = true 
 ```
-
 
 
