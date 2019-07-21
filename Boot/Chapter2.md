@@ -57,6 +57,9 @@
 >
 > 스프링 프레임워크 5에서 리액티브 프로그래밍 모델에 사용하는 핵심 라이브러리 
 
+> 리액터, Flux, Mono 요약 설명 : https://javacan.tistory.com/entry/Reactor-Start-1-RS-Flux-Mono-Subscriber
+
+
 #### 플럭스 코드 살펴보기
 
 ```java
@@ -92,6 +95,10 @@ Flux.just(
   (Supplier<String>)()->"gamma")
   .subscribe(supplier->System.out.println(supplier.get()));
 )
+
+Flux.just() or Flux.generate()는 데이터 생성과정 자체가 동기 방식이다. Subscriber로부터 데이터 요청이 오면 그 시점에 SynchronousSink를 이용해 데이터를 생성한다. 반면에 별도 쓰레드를 이용해서 비동기로 데이터를 생성해야 하는 경우에는 SynchronousSink를 사용할 수 없다. 또한, SynchoronousSink는 한 번에 하나의 next 신호만 발생할 수 있다. 
+
+-> 이러한 경우에는 Flux.create()를 사용해야 한다.
 ```
 
 
