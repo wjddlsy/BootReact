@@ -201,6 +201,17 @@ $ SERVER_PORT=8000 java -jar build/libs/learning-spring-boot-0.0.1-SNAPSHOT.jar
 > ### 6. 클라우드 파운드리에 배포
 
 클라우드-네이티브는 애플리케이션 표준으로 자리잡고 있다 
+* PWS(Piotal Web Service) : 대표적인 클라우드 파운드리 호스팅 제공 업체  
+
+* PWS 계정 생성 : https://run.pivotal.io/
+
+* cf도구 다운로드 : https://pivotal.io/platform/pcf-tutorials/getting-started-with-pivotal-cloud-foundry/install-the-cf-cli
+
+* 배포에 사용할 아티팩트경로로 build한 jar 파일을 PWS에 업로드한다. :  cf push BootReact -p build/libs/learning-spring-boot-0.0.1-SNAPSHOT.jar
+
+* 배포된 프로덕트는 cf log 명령어를 활용해 어플리케이션의 log를 확인할 수 있다.
+
+* 배포후에는 http:{아티팩트명}.cfapps.io url로 배포된 어플리케이션에 접근 할 수 있다.
 
 :smile: **클라우드-네이티브**  
 
@@ -209,7 +220,6 @@ $ SERVER_PORT=8000 java -jar build/libs/learning-spring-boot-0.0.1-SNAPSHOT.jar
 Pivotal 클라우드-네이티브 : https://pivotal.io/kr/cloud-native
 </pre>
    
-
 
 > ### 7. 프로덕션-준비 지원 추가
 
@@ -221,6 +231,7 @@ Pivotal 클라우드-네이티브 : https://pivotal.io/kr/cloud-native
 
 #### 스프링 부트 액추에이터 
 
+요약 참조 : https://supawer0728.github.io/2018/05/12/spring-actuator/
 ```
 # build.gradle
 compile('org.springframework.boot:spring-boot-starter-actuator')
@@ -246,4 +257,14 @@ compile('org.springframework.boot:spring-boot-starter-actuator')
 endpoints.{endpoint}.enabled = true 
 ```
 
+> JSON을 활용한 어플리케이션 상태 관리
+* JSON 뷰어 : https://github.com/tulios/json-viewer
+* JSON 구문분석 라이브러리 : http://docs.groovy-lang.org/latest/html/gapi/groovy/json/JsonSlurper.html
 
+> 매트릭스  
+* 실제로 어플리케이션을 운영하기위해선 메트릭스가 필요하며, 이 기능 또한 스프링 부트에서 제공한다.
+* 스프링 부트 액추에이터가 수집한 매트릭스는 애플리케이션이 다시 시작되기 전 까지만 지속된다. 따라서 데이터를 장기적으로 수집하려면 아래의 url을 참고하라. 
+
+```
+http://docs.spring.io/spring-boot/docs/2.0.0.M5/reference/htmlsingle/#production-ready-metrics
+```
